@@ -1,0 +1,44 @@
+html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* border: 1px solid black; */
+
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+:root {
+
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* height: 100vh; */
+}
+
+h1 {
+
+}
+
+.container {
+    /* margin-top: 100px; */
+    display: flex;
+    flex-wrap: wrap;
+    /* background-color: aqua; */
+    /* border: 1px solid black; */
+    width: 960px;
+    height: 960px;
+}
+
+.square {
+    border: 1px solid black;
+    flex: 1 0 calc(960px / 16);
+    height: calc(960px / 16);
+    /* background-color: red; */
+}
