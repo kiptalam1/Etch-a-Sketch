@@ -2,6 +2,7 @@ html {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-size: 16px;
     /* border: 1px solid black; */
 
 }
@@ -11,7 +12,7 @@ html {
 }
 
 :root {
-
+    --grid-size: 16;
 }
 
 body {
@@ -26,19 +27,33 @@ h1 {
 
 }
 
+.buttons {
+    display: inline;
+    margin: 20px 0;
+    
+}
+
+button {
+    margin: 10px;
+    padding: 5px;
+    width: 80px;
+    border-radius: 10px;
+    font-size: 1rem;
+}
+
 .container {
     /* margin-top: 100px; */
     display: flex;
     flex-wrap: wrap;
     /* background-color: aqua; */
-    /* border: 1px solid black; */
+    border: 1px solid black;
     width: 960px;
     height: 960px;
 }
 
 .square {
     border: 1px solid black;
-    flex: 1 0 calc(960px / 16);
-    height: calc(960px / 16);
+    flex: 1 0 calc(960px / var(--grid-size));
+    height: calc(960px / var(--grid-size));
     /* background-color: red; */
 }

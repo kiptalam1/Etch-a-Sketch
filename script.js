@@ -31,7 +31,11 @@ sizeBtn.addEventListener('click', () => {
             size = 100;
         }
         createGrid(size);
+        document.documentElement.style.setProperty('--grid-size', size);
     }
     );
+
+resetBtn.addEventListener('click', )
+
 
 createGrid(16);
