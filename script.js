@@ -3,7 +3,7 @@ const sizeBtn = document.querySelector('.sizeBtn');
 const resetBtn = document.querySelector('.resetBtn');
 
 
-
+let size = 16;
 
 function createGrid(size) {
     // getGridSize();
@@ -11,9 +11,7 @@ function createGrid(size) {
     for (let i = 0; i < size * size; i++) {
         const square = document.createElement('div')
         square.classList.add("square");
-        //square.textContent = "Square" + i;
         gridContainer.appendChild(square);
-        //console.log(square);
         square.addEventListener('mouseover', () => changeColor(square));
     }
 }
@@ -24,9 +22,10 @@ function changeColor(square) {
 }
 
 sizeBtn.addEventListener('click', () => {
-        let size = parseInt(prompt("Enter grid size: "));
-        if (!size) {
+        size = parseInt(prompt("Enter grid size: "));
+        if (!size || size < 1) {
             alert("Enter a valid input between 1 - 100.");
+            size = 16;
         } else if (size > 100) {
             size = 100;
         }
@@ -36,9 +35,12 @@ sizeBtn.addEventListener('click', () => {
     );
 
 resetBtn.addEventListener('click', () => {
-    // gridContainer.innerHTML = '';
-    createGrid(16);
+    const squares = gridContainer.querySelectorAll('.square');
+    squares.forEach(square => {
+        square.style.backgroundColor = 'white'; // Reset color to white or your desired color
+    });
 })
 
+
 // Initial 16x16 grid layout.
-createGrid(16);
+createGrid(size);
