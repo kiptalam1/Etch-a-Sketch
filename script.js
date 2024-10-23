@@ -35,7 +35,10 @@ sizeBtn.addEventListener('click', () => {
     }
     );
 
-resetBtn.addEventListener('click', )
+resetBtn.addEventListener('click', () => {
+    // gridContainer.innerHTML = '';
+    createGrid(16);
+})
 
-
+// Initial 16x16 grid layout.
 createGrid(16);
