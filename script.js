@@ -19,6 +19,12 @@ function createGrid(size) {
 function changeColor(square) {
     const randomColor = `rgb(${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)}, ${Math.floor(Math.random() * 256)})`;
     square.style.backgroundColor = randomColor;
+
+    // Optionally, you can implement the darkening effect here
+    // let currentOpacity = parseFloat(square.dataset.opacity) || 0.1;
+    // currentOpacity = Math.min(currentOpacity + 0.1, 1);
+    // square.style.opacity = currentOpacity;
+    // square.dataset.opacity = currentOpacity;
 }
 
 sizeBtn.addEventListener('click', () => {
@@ -36,8 +42,10 @@ sizeBtn.addEventListener('click', () => {
 
 resetBtn.addEventListener('click', () => {
     const squares = gridContainer.querySelectorAll('.square');
+    const containerColor = getComputedStyle(document.documentElement)
+                        .getPropertyValue('--container-clr');
     squares.forEach(square => {
-        square.style.backgroundColor = 'white'; // Reset color to white or your desired color
+        square.style.backgroundColor = containerColor.trim(); // Reset color to white or your desired color
     });
 })
 
