@@ -71,6 +71,7 @@ button:hover {
     height: var(--grid-container-size);
     margin-bottom: 10px;
     border-radius: 5px;
+    border: none;
 }
 
 .square {
